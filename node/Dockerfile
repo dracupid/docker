@@ -4,6 +4,7 @@ ENV NODE_VERSION 5.6.0
 ENV NODE_HOST http://npm.taobao.org/mirrors/node
 ENV NODE_DIR /usr/local
 ENV NPM_DIR $NODE_DIR/lib/node_modules/npm
+ENV NODE_PROJECT_DIR /var/www/nodejs
 
 COPY .npmrc /root/
 
@@ -13,6 +14,6 @@ RUN curl -SLO "$NODE_HOST/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
     && cd $NODE_DIR && rm *.md LICENSE \
     && cd $NPM_DIR && rm -rf *.md *.bat .mailmap .npmignore .travis.yml AUTHORS LICENSE Makefile changelogs configure man html doc
 
-EXPOSE 3000
+WORKDIR $NODE_PROJECT_DIR
 
-CMD [ "node" ]
+CMD node
