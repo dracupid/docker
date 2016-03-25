@@ -2,7 +2,7 @@ FROM registry.aliyuncs.com/dracupid/ubuntu
 
 RUN echo "deb http://nginx.org/packages/mainline/ubuntu/ wily nginx" >> /etc/apt/sources.list.d/nginx.list \
     && apt-get update \
-    && apt-get install -y --allow-unauthenticated nginx \
+    && apt-get install -y --allow-unauthenticated nginx nginx-module-image-filter \
     && rm -rf /var/lib/apt/lists/*
 
 # forward request and error logs to docker log collector
