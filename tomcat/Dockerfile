@@ -15,4 +15,4 @@ RUN curl -fSL "$TOMCAT_TGZ_URL" -o tomcat.tar.gz \
     && rm tomcat.tar.gz*
 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+CMD catalina.sh start && tail -f $CATALINA_HOME/logs/catalina.out
