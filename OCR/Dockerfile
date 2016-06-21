@@ -1,0 +1,11 @@
+FROM registry.aliyuncs.com/dracupid/tomcat
+
+ENV TESSDATA_PREFIX /usr/share/tesseract-ocr
+
+ADD opencv-3.1.0_3.tar.gz /root/
+COPY libso/* /usr/lib/
+COPY sources.list /etc/apt/
+
+RUN apt-get update \
+    && apt-get install -y g++ cmake libtesseract-dev tesseract-ocr-eng tesseract-ocr-chi-sim libmagick++-dev \
+    && rm -rf /var/lib/apt/lists/*
