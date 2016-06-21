@@ -1,6 +1,6 @@
 FROM registry.aliyuncs.com/dracupid/ubuntu
 
-ENV NODE_VERSION 6.0.0
+ENV NODE_VERSION 6.2.1
 ENV NODE_HOST http://npm.taobao.org/mirrors/node
 ENV NODE_DIR /usr/local
 ENV NPM_DIR $NODE_DIR/lib/node_modules/npm
