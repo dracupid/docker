@@ -1,5 +1,17 @@
-deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-updates main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-proposed main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-backports main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+
+# deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted universe multiverse
+# deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted universe multiverse
+# deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-updates main restricted universe multiverse
+# deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-proposed main restricted universe multiverse
+# deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-backports main restricted universe multiverse
