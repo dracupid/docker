@@ -3,16 +3,17 @@ FROM registry.aliyuncs.com/dracupid/tomcat
 ENV TESSDATA_PREFIX /usr/share/tesseract-ocr
 
 ADD 3.1.0.tar.gz /tmp/
-COPY ippicv_linux_20151201.tgz /tmp/opencv-3.1.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e/
 
 RUN apt-get update \
-    # && apt-get install -y build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev \
-    && apt-get install -y build-essential cmake pkg-config libjpeg-dev libpng-dev \
-    && apt-get install -y libleptonica-dev libtesseract-dev tesseract-ocr-eng tesseract-ocr-chi-sim libmagick++-dev \
+    && apt-get install -y build-essential cmake pkg-config libjpeg-dev \
+    && apt-get install -y libleptonica-dev libtesseract-dev tesseract-ocr-eng tesseract-ocr-chi-sim  \
+    #libmagick++-dev
     && rm -rf /var/lib/apt/lists/*
 
 RUN cd /tmp/opencv-3.1.0/ && mkdir build && cd build \
-    && cmake -D CMAKE_BUILD_TYPE=Release -D WITH_FFMPEG=OFF -D WITH_CUDA=OFF -D WITH_GTK=OFF -D BUILD_DOCS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_TESTS=OFF -D CMAKE_INSTALL_PREFIX=/usr/local .. \
+    && cmake -DCMAKE_BUILD_TYPE=Release -DWITH_FFMPEG=OFF -DWITH_OPENEXR=OFF -DWITH_TIFF=OFF -DWITH_GTK=OFF \
+       -DWITH_PNG=OFF -DWITH_MATLAB=OFF -DWITH_WEBP=OFF -DWITH_CUDA=OFF -DBUILD_DOCS=OFF -DBUILD_PERF_TESTS=OFF \
+       -DBUILD_TESTS=OFF -DWITH_IPP=OFF -DWITH_LIBV4L=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. \
     && make -j4 \
     && make install -j4 \
     && make clean \
